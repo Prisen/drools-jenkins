@@ -1,3 +1,5 @@
+@Library('jenkins-pipeline-shared-lib-sample')_
+
 pipeline {
     agent any
     tools {
@@ -13,6 +15,12 @@ pipeline {
                 ''' 
             }
         }
+        stage('Print Build Info') {
+            printBuildinfo {
+                name = "Sample Name"
+            }
+        }
+
         stage('Build') {
             steps {
                 sh 'mvn -X clean install'
