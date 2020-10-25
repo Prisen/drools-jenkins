@@ -15,14 +15,6 @@ pipeline {
                 ''' 
             }
         }
-        stage('Print Build Info') {
-            steps {
-                printBuildinfo {
-                    name = "Sample Name"
-                }
-            }
-        }
-
         stage('Build') {
             steps {
                 sh 'mvn -X clean install'
@@ -37,6 +29,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                deploy()
             }
         }
     }
