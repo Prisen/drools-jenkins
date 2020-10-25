@@ -16,8 +16,10 @@ pipeline {
             }
         }
         stage('Print Build Info') {
-            printBuildinfo {
-                name = "Sample Name"
+            steps {
+                printBuildinfo {
+                    name = "Sample Name"
+                }
             }
         }
 
