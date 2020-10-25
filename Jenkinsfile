@@ -2,7 +2,6 @@ pipeline {
     agent any
     tools {
         maven 'mvn3'
-        jdk 'jdk14'
     }
 
     stages {
