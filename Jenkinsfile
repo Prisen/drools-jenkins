@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Starting int-test job') {
             steps {
-                build job: 'drools-jenkins-integration-test'
+                build job: 'integration-tests/drools-jenkins'
             }
         }
         stage('Deploy') {
