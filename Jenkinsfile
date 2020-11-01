@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Starting int-test job') {
             steps {
-                build job: 'using-shared-library'
+                build job: 'drools-jenkins-integration-test'
             }
         }
         stage('Deploy') {
