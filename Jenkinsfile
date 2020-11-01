@@ -1,4 +1,4 @@
-@Library('jenkins-pipeline-shared-lib-sample')_
+@Library('jenkins-pipeline-shared-lib-sample') _
 
 pipeline {
     agent any
@@ -7,12 +7,12 @@ pipeline {
     }
 
     stages {
-        stage ('Initialize') {
+        stage('Initialize') {
             steps {
                 sh '''
                     echo "PATH = ${PATH}"
                     echo "M2_HOME = ${M2_HOME}"
-                ''' 
+                '''
             }
         }
         stage('Build') {
@@ -24,6 +24,11 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
+            }
+        }
+        stage('Starting int-test job') {
+            steps {
+                build job: 'using-shared-library'
             }
         }
         stage('Deploy') {
